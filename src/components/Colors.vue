@@ -2,7 +2,8 @@
   <div class="color-app">
     <h2>Procvičování barev</h2>
     <button @click="speakGreetings">Pozdrav</button>
-    <div class="color-container">
+    <div class="color-container w-30">
+      <div class="bg-black h-10 w-20" ></div>
       <div
         v-for="(color, index) in colors"
         :key="index"
