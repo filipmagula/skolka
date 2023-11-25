@@ -1,20 +1,34 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Colors from './components/Colors.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="main">
+    <h1>Veselá školka</h1>
+    <Colors msg="Vite + Vue" />
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  
 </template>
 
 <style scoped>
+.main{
+  height: 100%;
+  width: 100%;
+  background-image: url('./assets/background.png');
+  background-size: cover;
+}
+
+.main h1 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 3em;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 0 1em #646cff;
+  margin: 0;
+  padding: 0.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
