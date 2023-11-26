@@ -1,23 +1,22 @@
 <template>
-  <div class="color-app">
-    <h2>Procvičování barev</h2>
-    <button @click="speakGreetings">Pozdrav</button>
-    <div class="color-container w-30">
-      <div class="bg-black h-10 w-20" ></div>
+  <div class="">
+    <div ></div>
+    <div class="text-4xl p-4">Barvy</div>
+    <div class="w-full flex flex-row flex-wrap p-2">
       <div
         v-for="(color, index) in colors"
         :key="index"
-        class="color-box"
-        :style="{ backgroundColor: color.hex }"
+        class="basis-1/3 p-2"
         @click="selectColor(color)"
       >
-        {{ color.name }} 
-        <br />    
+        <div class="flex h-28 border border-black rounded-lg justify-center items-end content-end"
+         :style="{ backgroundColor: color.hex}"
+        >
+          <div class="bg-slate-700 opacity-75 text-white px-2 rounded-t-lg">{{ color.name }}</div> 
+        </div>
       </div>
     </div>
-    <div v-if="selectedColor">
-      Vybraná barva: <strong>{{ selectedColor.name }}</strong>
-    </div>
+    <div @click="$emit('showView', 'welcome')" class="bg-transblack border-1 rounded-lg p-2 text-xl">Zpět</div>
   </div>
 </template>
 
@@ -26,21 +25,21 @@ export default {
   data() {
     return {
       colors: [
-        { name: 'Červená', hex: '#FF0000' },
-        { name: 'Modrá', hex: '#0000FF' },
-        { name: 'Zelená', hex: '#00FF00' },
-        { name: 'Žlutá', hex: '#FFFF00' },
+        { name: 'Červená', hex: '#ff5661' },
+        { name: 'Modrá', hex: '#83b3fb' },
+        { name: 'Zelená', hex: '#8bf18b' },
+        { name: 'Žlutá', hex: '#ffea81' },
         { name: 'Bílá', hex: '#FFFFFF' },
         { name: 'Černá', hex: '#000000' },
-        { name: 'Hnědá', hex: '#654321' },
-        { name: 'Oranžová', hex: '#FFA500' },
-        { name: 'Růžová', hex: '#FFC0CB' },
-        { name: 'Fialová', hex: '#800080' },
+        { name: 'Hnědá', hex: '#a73312' },
+        { name: 'Oranžová', hex: '#fc874d' },
+        { name: 'Růžová', hex: '#fb83be' },
+        { name: 'Fialová', hex: '#c35df3' },
         { name: 'Šedá', hex: '#808080' },
         
         // Přidejte další barvy podle potřeby
       ],
-      greeting: 'Ahoj Ferdo, pojďme se učit barvy!',
+      greeting: 'Pojdmě na barvy!',
       selectedColor: null,
       voice: null,
     };
@@ -94,31 +93,6 @@ export default {
 </script>
 
 <style scoped>
-.color-app {
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-.color-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  
-}
-
-.color-box {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-weight: bold;
-  color: white;
-  border-radius: 8px;
-  border: 1px solid black;
-}
 
 .color-box:hover {
   animation: rotate 1s
