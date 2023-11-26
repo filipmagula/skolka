@@ -1,6 +1,7 @@
 # Školka (CZ)
 
 Welcome to Preschool Fun, the app that teaches your child various skills in a fun and engaging way! 🎉
+Currently published at github pages here: [https://filipmagula@github.io/skolka]
 
 ## Main purpose
 With Preschool Fun, your child will learn:
