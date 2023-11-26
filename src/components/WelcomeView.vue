@@ -1,17 +1,16 @@
 <template>
-    <div class="">
-        <div></div>
-        <div class="text-4xl p-4">Zábavná školka</div>
+    <div class="w-full">
+        <div class="text-4xl p-4 text-white">Zábavná školka</div>
         <div class="w-full flex flex-row flex-wrap p-2">
             <div class="basis-1/2 p-2" @click="$emit('showView','colors')">
                 <div class="flex flex-col h-28 border border-black rounded-lg justify-center bg-transblack">
-                    <div class="flex text-4xl h-full items-center justify-center"> Barvy </div>
+                    <div class="flex text-4xl h-full items-center justify-center text-white"> Barvy </div>
 
                 </div>
             </div>
             <div class="basis-1/2 p-2" @click="$emit('showView','numbers')">
                 <div class="flex flex-col h-28 border border-black rounded-lg justify-center bg-transblack">
-                    <div class="flex text-4xl h-full items-center justify-center"> Čísla </div>
+                    <div class="flex text-4xl h-full items-center justify-center text-white"> Čísla </div>
                 </div>
             </div>
         </div>

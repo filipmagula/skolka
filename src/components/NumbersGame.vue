@@ -1,7 +1,6 @@
 <template>
     <div class="">
-      <div ></div>
-      <div class="text-4xl p-4">Čísla</div>
+      <div class="text-4xl p-4 text-white">Čísla</div>
       <div class="w-full flex flex-row flex-wrap p-2">
         <div
           v-for="(color, index) in numbers"
@@ -11,12 +10,12 @@
         >
           <div class="flex flex-col h-28 border border-black rounded-lg justify-center bg-transblack"
           >
-            <div class="flex text-4xl h-full items-center justify-center"> {{ color.number }}</div>
+            <div class="flex text-4xl h-full items-center justify-center text-white"> {{ color.number }}</div>
             <div class="bg-slate-700 opacity-75 text-white px-2 rounded-lg">{{ color.name }}</div> 
           </div>
         </div>
       </div>
-      <div @click="$emit('showView', 'welcome')" class="bg-transblack border-1 rounded-lg p-2 text-xl">Zpět</div>
+      <div @click="$emit('showView', 'welcome')" class="bg-transblack border-1 rounded-lg p-2 text-xl text-white">Zpět</div>
     </div>
   </template>
   
