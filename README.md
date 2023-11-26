@@ -22,3 +22,11 @@ Learn how immediate feedback from users (2 and 4 years old) can steer the applic
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+- Use Firefox on Android and make sure that Speech engine is properly set in your system settings.
+
+## Known Major Issues
+- Speech Engine does not work well in Chrome on Android (for Czech language uses English pronounciation)
+- Speech Engine queues all utterances
+- No support for localization
+- No (desktop) responsivnes implemented 
