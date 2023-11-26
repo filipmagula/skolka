@@ -1,7 +1,11 @@
 <script setup>
-import ColorsGame from './components/ColorsGame.vue'
-import NumbersGame from './components/NumbersGame.vue'
+import ColorsGame from './components/ColorsGame.vue';
+import NumbersGame from './components/NumbersGame.vue';
+import ShapesGame from './components/ShapesGame.vue';
 import WelcomeView from './components/WelcomeView.vue';
+import LettersGame from './components/LettersGame.vue';
+import CountingGame from './components/CountingGame.vue';
+
 
 import { ref } from 'vue'
 
@@ -27,6 +31,9 @@ function showView(name) {
     <WelcomeView v-if="selectedScreen=='welcome'" class="" @showView="showView" />
     <NumbersGame v-if="selectedScreen=='numbers'" class="" @showView="showView" />
     <ColorsGame v-if="selectedScreen=='colors'" class="" @showView="showView" />
+    <ShapesGame v-if="selectedScreen=='shapes'" class="" @showView="showView" />
+    <LettersGame v-if="selectedScreen=='letters'" class="" @showView="showView" />
+    <CountingGame v-if="selectedScreen=='counting'" class="" @showView="showView" />
   </div>
   
 </template>

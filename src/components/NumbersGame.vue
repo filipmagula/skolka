@@ -1,6 +1,6 @@
 <template>
     <div class="">
-      <div class="text-4xl p-4 text-white">Čísla</div>
+      <div class="title text-5xl p-4 text-white">Čísla</div>
       <div class="w-full flex flex-row flex-wrap p-2">
         <div
           v-for="(color, index) in numbers"
@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-      <div @click="$emit('showView', 'welcome')" class="bg-transblack border-1 rounded-lg p-2 text-xl text-white">Zpět</div>
+      <div @click="$emit('showView', 'welcome')" class="bg-transblack border-1 rounded-lg p-2 text-xl text-white m-2">Zpět</div>
     </div>
   </template>
   
