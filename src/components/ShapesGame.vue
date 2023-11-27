@@ -2,23 +2,21 @@
   <div class="">
     <div class="title text-5xl p-4 text-white">Tvary</div>
     <div class="w-full flex flex-row flex-wrap p-2">
-      <div v-for="(shape, index) in shapes" :key="index" class="basis-1/3 p-2"
-        @click="speakShape(shape.name)">
+      <div v-for="(shape, index) in shapes" :key="index" class="basis-1/3 p-2" @click="speakShape(shape.name)">
         <div class="flex flex-col h-28 border border-black rounded-lg justify-center bg-transblack">
           <div class="flex h-full items-center justify-center">
-            <img class="max-h-14 max-w-14 p-1"  :src="getImageUrl(shape.file)" :alt="shape.name">
+            <img class="max-h-14 max-w-14 p-1" :src="getImageUrl(shape.file)" :alt="shape.name">
           </div>
           <div class="bg-slate-700 opacity-75 text-white px-2 rounded-lg">{{ shape.name }}</div>
         </div>
       </div>
-    </div>  
-    <div
-        @click="$emit('showView', 'welcome')"
-        class="bg-transblack border-1 rounded-lg p-2 m-2 text-xl text-white"
-      >
-        Zpět
     </div>
+    <div @click="$emit('showView', 'welcome')"
+      class="flex flex-row bg-transblack border-1 rounded-lg p-2 text-xl text-white m-4 absolute bottom-1">
+      <img src="../assets/back.png" alt="Zpět" class="p-1 h-8 mr-2">
+      <p>Zpět</p>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -57,14 +55,14 @@ onMounted(() => {
 })
 
 const shapes = [
-  { "name": "čtverec", "file":"square.png" },
-  { "name": "kruh", "file":"circle.png" },
-  { "name": "obdelník", "file":"rectangle.png" },
-  { "name": "trojúhelník", "file":"triangle.png" },
-  { "name": "ovál", "file":"oval.png" },
-  { "name": "lichoběžník", "file":"trapezoid.png" },
-  { "name": "rovnoběžník", "file":"parallelogram.png" },
-  { "name": "hvězda", "file":"star.png" },
-  { "name": "spirála", "file":"spiral.png" },
+  { "name": "čtverec", "file": "square.png" },
+  { "name": "kruh", "file": "circle.png" },
+  { "name": "obdelník", "file": "rectangle.png" },
+  { "name": "trojúhelník", "file": "triangle.png" },
+  { "name": "ovál", "file": "oval.png" },
+  { "name": "lichoběžník", "file": "trapezoid.png" },
+  { "name": "rovnoběžník", "file": "parallelogram.png" },
+  { "name": "hvězda", "file": "star.png" },
+  { "name": "spirála", "file": "spiral.png" },
 ]
 </script>

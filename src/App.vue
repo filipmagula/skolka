@@ -5,7 +5,7 @@ import ShapesGame from './components/ShapesGame.vue';
 import WelcomeView from './components/WelcomeView.vue';
 import LettersGame from './components/LettersGame.vue';
 import CountingGame from './components/CountingGame.vue';
-
+import PlayerView from './components/PlayerView.vue';
 
 import { ref } from 'vue'
 
@@ -34,6 +34,7 @@ function showView(name) {
     <ShapesGame v-if="selectedScreen=='shapes'" class="" @showView="showView" />
     <LettersGame v-if="selectedScreen=='letters'" class="" @showView="showView" />
     <CountingGame v-if="selectedScreen=='counting'" class="" @showView="showView" />
+    <PlayerView v-if="selectedScreen=='player'" class="" @showView="showView" />
   </div>
   
 </template>

@@ -11,12 +11,14 @@
       </div>
     </div>
 
-    <div @click="selectLettersToShow()" class="bg-transblack border-1 rounded-lg p-2 m-2 text-xl text-white">
+    <div @click="selectLettersToShow()" class="bg-transblack border-1 rounded-lg p-2 m-4 text-xl text-white">
       Nová písmena
     </div>
 
-    <div @click="$emit('showView', 'welcome')" class="bg-transblack border-1 rounded-lg p-2 m-2 text-xl text-white">
-      Zpět
+    <div @click="$emit('showView', 'welcome')"
+      class="flex flex-row bg-transblack border-1 rounded-lg p-2 text-xl text-white m-4 absolute bottom-1">
+      <img src="../assets/back.png" alt="Zpět" class="p-1 h-8 mr-2">
+      <p>Zpět</p>
     </div>
   </div>
 </template>
@@ -31,7 +33,7 @@ let voice = null
 function selectLettersToShow() {
   // clear the lettersToShow array
   lettersToShow.value = []
- 
+
   // select 9 random but unique letters from the letters array
   const lettersToSelectFrom = letters.filter(letter => letter.words.length > 1)
   const selectedLetters = []
@@ -47,10 +49,10 @@ function selectLettersToShow() {
   selectedLetters.forEach(element => {
     const randomWordIndex = Math.floor(Math.random() * element.words.length)
     const randomWord = [element.words[randomWordIndex]][0]
-    selectedLettersAndWords.push({name:element.name, pronounciation:element.pronounciation, word:randomWord })
+    selectedLettersAndWords.push({ name: element.name, pronounciation: element.pronounciation, word: randomWord })
     console.log(randomWord)
-  }); 
-  
+  });
+
 
   lettersToShow.value = selectedLettersAndWords
   console.log(lettersToShow.value)
@@ -89,36 +91,36 @@ onMounted(() => {
 })
 
 const letters = [
-  { "name": "A", "pronounciation":"Aa", "words": ["auto", "autobus", "architekt", "atmosféra", "anděl", "akademie", "aplikace", "akvárium", "Amerika", "Austrálie", "Asie"] },
-  { "name": "B", "pronounciation":"Bé", "words": ["bota", "bicykl", "balkón", "brouk", "bomba", "bazar", "březen", "bublina", "brusle", "bobr", "babička"] },
-  { "name": "C", "pronounciation":"Cé", "words": ["cukr", "cíl", "cena", "cirkus", "cuketa", "cibule", "cukrárna", "citrón"] },
-  { "name": "Č", "pronounciation":"Čé", "words": ["čáp", "čokoláda", "čtvrtek", "čepice", "čumák", "čára", "čaj", "čelist", "čtyřka"] },
-  { "name": "D", "pronounciation":"Dé", "words": ["dům", "dort", "diamant", "dárek", "doktor", "dálnice", "dýně", "dlaždice", "dinosaurus", "dvojka", "devítka", "desítka", "děda"] },
-  { "name": "E", "pronounciation":"Ee", "words": ["elektrárna", "eskymák", "elektronika", "Evropa"] },
-  { "name": "F", "pronounciation":"Ef", "words": ["fotbal", "fialka", "farma", "fotografie", "fara", "flek", "Ferda", "flétna"] },
-  { "name": "G", "pronounciation":"Gé", "words": ["gól", "guma", "galerie", "gazela", "guláš", "gymnasta", "gumáky"] },
-  { "name": "H", "pronounciation":"Há", "words": ["hodiny", "housle", "hřeben", "hokej", "houska", "hřídel", "hříbě", "hlava"] },
-  { "name": "I", "pronounciation":"Měkké Ii", "words": ["internet", "inkoust", "iglú", "Itálie"] },
-  { "name": "J", "pronounciation":"Jé", "words": ["jablko", "jaro", "jazyk", "jednička", "jedlík", "jednorožec", "jed", "jelen", "jednička"] },
-  { "name": "K", "pronounciation":"Ká", "words": ["kůň", "kolo", "kostel", "káva", "kamera", "kabát", "kabelka", "kaktus", "kalkulačka", "kamion", "kočka"] },
-  { "name": "L", "pronounciation":"El", "words": ["láska", "léto", "lednice", "loď", "letadlo", "loupež", "lampa", "lístek", "loutka", "lak", "lžíce", "Lada"] },
-  { "name": "M", "pronounciation":"Em", "words": ["město", "míč", "mobil", "mikrofon", "maminka", "měsíc", "mouka", "Mája", "meloun"] },
-  { "name": "N", "pronounciation":"En", "words": ["nůž", "nádraží", "nábytek", "nápad", "náhoda", "nápoj", "náramek", "náruč", "návštěva", "nůžky", "noha"] },
-  { "name": "O", "pronounciation":"Óo", "words": ["okno", "obchod", "obraz", "obuv", "oběd", "obal", "obrazovka", "občerstvení", "opice", "okurka", "osmička"] },
-  { "name": "P", "pronounciation":"Pé", "words": ["pes", "příroda", "přání", "příběh", "přístav", "příkop", "pětka", "police", "pavouk"] },
-  { "name": "Q", "pronounciation":"Qé", "words": ["qéčko"] },
-  { "name": "R", "pronounciation":"Er", "words": ["rádio", "rodina", "rýže", "rýma", "rýč", "růže", "ryba", "ráj", "raketa", "robot", "rak", "rada", "ruka"] },
-  { "name": "S", "pronounciation":"Es", "words": ["slunce", "stůl", "stín", "skříň", "stavba", "sůl", "slepice", "soumrak", "střecha", "srdce", "sedmička", "sova"] },
-  { "name": "Š", "pronounciation":"Eš", "words": ["škola", "šaty", "šipka", "štěně", "šátek", "šum", "švec", "šperk", "štít", "šťastný", "šestka"] },
-  { "name": "T", "pronounciation":"Té", "words": ["tráva", "traktor", "třešeň", "těsto", "tulipán", "trenér", "trpaslík", "tajemství", "tanečník", "třída", "trojka"] },
-  { "name": "U", "pronounciation":"Uú", "words": ["ulice", "ucho", "usměv", "uzel", "učitel", "úsměv", "usazenina", "uši", "užovka"] },
-  { "name": "Ú", "pronounciation":"Dlouhé Uu", "words": ["úhel", "údolí", "účes", "útulek", "úleva", "úspěch", "ústa", "účet"] },
-  { "name": "V", "pronounciation":"Vé", "words": ["voda", "vítr", "vůně", "víno", "vůz", "včela", "výlet", "výhled", "výstava", "vajíčko"] },
-  { "name": "W", "pronounciation":"Dvojité Vé", "words": ["WC", "western"] },
-  { "name": "X", "pronounciation":"Iks", "words": ["xylofón"] },
-  { "name": "Y", "pronounciation":"Tvrdé Ýy", "words": ["yzop", "ypsilón"] },
-  { "name": "Z", "pronounciation":"Zet", "words": ["zahrada", "zvíře", "zub", "zrcadlo", "zima", "zmrzlina", "zvonek", "zajíc", "zubr"] },
-  { "name": "Ž", "pronounciation":"Žet", "words": ["židle", "žena", "život", "žralok", "železo", "žirafa", "žaludek", "žonglér", "žihadlo", "žebřík"] },
+  { "name": "A", "pronounciation": "Aa", "words": ["auto", "autobus", "architekt", "atmosféra", "anděl", "akademie", "aplikace", "akvárium", "Amerika", "Austrálie", "Asie"] },
+  { "name": "B", "pronounciation": "Bé", "words": ["bota", "bicykl", "balkón", "brouk", "bomba", "bazar", "březen", "bublina", "brusle", "bobr", "babička"] },
+  { "name": "C", "pronounciation": "Cé", "words": ["cukr", "cíl", "cena", "cirkus", "cuketa", "cibule", "cukrárna", "citrón"] },
+  { "name": "Č", "pronounciation": "Čé", "words": ["čáp", "čokoláda", "čtvrtek", "čepice", "čumák", "čára", "čaj", "čelist", "čtyřka"] },
+  { "name": "D", "pronounciation": "Dé", "words": ["dům", "dort", "diamant", "dárek", "doktor", "dálnice", "dýně", "dlaždice", "dinosaurus", "dvojka", "devítka", "desítka", "děda"] },
+  { "name": "E", "pronounciation": "Ee", "words": ["elektrárna", "eskymák", "elektronika", "Evropa"] },
+  { "name": "F", "pronounciation": "Ef", "words": ["fotbal", "fialka", "farma", "fotografie", "fara", "flek", "Ferda", "flétna"] },
+  { "name": "G", "pronounciation": "Gé", "words": ["gól", "guma", "galerie", "gazela", "guláš", "gymnasta", "gumáky"] },
+  { "name": "H", "pronounciation": "Há", "words": ["hodiny", "housle", "hřeben", "hokej", "houska", "hřídel", "hříbě", "hlava"] },
+  { "name": "I", "pronounciation": "Měkké Ii", "words": ["internet", "inkoust", "iglú", "Itálie"] },
+  { "name": "J", "pronounciation": "Jé", "words": ["jablko", "jaro", "jazyk", "jednička", "jedlík", "jednorožec", "jed", "jelen", "jednička"] },
+  { "name": "K", "pronounciation": "Ká", "words": ["kůň", "kolo", "kostel", "káva", "kamera", "kabát", "kabelka", "kaktus", "kalkulačka", "kamion", "kočka"] },
+  { "name": "L", "pronounciation": "El", "words": ["láska", "léto", "lednice", "loď", "letadlo", "loupež", "lampa", "lístek", "loutka", "lak", "lžíce", "Lada"] },
+  { "name": "M", "pronounciation": "Em", "words": ["město", "míč", "mobil", "mikrofon", "maminka", "měsíc", "mouka", "Mája", "meloun"] },
+  { "name": "N", "pronounciation": "En", "words": ["nůž", "nádraží", "nábytek", "nápad", "náhoda", "nápoj", "náramek", "náruč", "návštěva", "nůžky", "noha"] },
+  { "name": "O", "pronounciation": "Óo", "words": ["okno", "obchod", "obraz", "obuv", "oběd", "obal", "obrazovka", "občerstvení", "opice", "okurka", "osmička"] },
+  { "name": "P", "pronounciation": "Pé", "words": ["pes", "příroda", "přání", "příběh", "přístav", "příkop", "pětka", "police", "pavouk"] },
+  { "name": "Q", "pronounciation": "Qé", "words": ["qéčko"] },
+  { "name": "R", "pronounciation": "Er", "words": ["rádio", "rodina", "rýže", "rýma", "rýč", "růže", "ryba", "ráj", "raketa", "robot", "rak", "rada", "ruka"] },
+  { "name": "S", "pronounciation": "Es", "words": ["slunce", "stůl", "stín", "skříň", "stavba", "sůl", "slepice", "soumrak", "střecha", "srdce", "sedmička", "sova"] },
+  { "name": "Š", "pronounciation": "Eš", "words": ["škola", "šaty", "šipka", "štěně", "šátek", "šum", "švec", "šperk", "štít", "šťastný", "šestka"] },
+  { "name": "T", "pronounciation": "Té", "words": ["tráva", "traktor", "třešeň", "těsto", "tulipán", "trenér", "trpaslík", "tajemství", "tanečník", "třída", "trojka"] },
+  { "name": "U", "pronounciation": "Uú", "words": ["ulice", "ucho", "usměv", "uzel", "učitel", "úsměv", "usazenina", "uši", "užovka"] },
+  { "name": "Ú", "pronounciation": "Dlouhé Uu", "words": ["úhel", "údolí", "účes", "útulek", "úleva", "úspěch", "ústa", "účet"] },
+  { "name": "V", "pronounciation": "Vé", "words": ["voda", "vítr", "vůně", "víno", "vůz", "včela", "výlet", "výhled", "výstava", "vajíčko"] },
+  { "name": "W", "pronounciation": "Dvojité Vé", "words": ["WC", "western"] },
+  { "name": "X", "pronounciation": "Iks", "words": ["xylofón"] },
+  { "name": "Y", "pronounciation": "Tvrdé Ýy", "words": ["yzop", "ypsilón"] },
+  { "name": "Z", "pronounciation": "Zet", "words": ["zahrada", "zvíře", "zub", "zrcadlo", "zima", "zmrzlina", "zvonek", "zajíc", "zubr"] },
+  { "name": "Ž", "pronounciation": "Žet", "words": ["židle", "žena", "život", "žralok", "železo", "žirafa", "žaludek", "žonglér", "žihadlo", "žebřík"] },
 ]
 
 </script>

@@ -45,6 +45,11 @@
             </div>
         </div>
 
+        <div @click="$emit('showView', 'player')" class="flex flex-row bg-transblack border-1 rounded-lg p-2 text-xl text-white m-4 absolute bottom-1">
+            <img src="../assets/player.png" alt="Nastavení" class="p-1 h-8 mr-2">
+            <p>Nastavení hráče</p>
+        </div>
+
     </div>
 </template>
 
