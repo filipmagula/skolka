@@ -3,7 +3,7 @@
     <div class="title text-5xl p-4 text-white">Nastavení</div>
     <div class="flex flex-col flex-wrap p-2 text-white items-start">
       <div class="flex flex-row  m-4">
-        <div class="text-xl mr-4 p-2 w-1/3 text-rights"> Oslovení </div>
+        <div class="text-xl mr-4 p-2 w-1/3 text-right"> Oslovení </div>
         <input type="text" class="text-3xl  bg-transblack px-4 w-2/3 "  id="playerName" v-model="playerName" />
       </div>
       <div class="flex flex-row  m-4 ">
