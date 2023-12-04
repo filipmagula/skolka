@@ -43,7 +43,7 @@ export default {
         
         // Přidejte další barvy podle potřeby
       ],
-      greeting: 'Pojdmě na barvy!',
+      greeting: 'Pojďme na barvy!',
       selectedColor: null,
       voice: null,
     };

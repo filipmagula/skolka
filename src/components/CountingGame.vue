@@ -31,7 +31,7 @@ const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 // Vytváří náhodný příklad na sčítání do 20
 const generateQuestion = () => {
-  const answer = random(2, 20);
+  const answer = random(2, 10);
   const a = random(1, answer - 1);
   const b = answer - a;
   const question = `${a} + ${b} = ?`;
@@ -43,7 +43,7 @@ const generateQuestion = () => {
 const generateOptions = (answer) => {
   const options = [answer];
   while (options.length < 4) {
-    const option = random(1, 20);
+    const option = random(1, 10);
     if (!options.includes(option)) {
       options.push(option);
     }
