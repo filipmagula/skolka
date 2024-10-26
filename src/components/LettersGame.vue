@@ -1,23 +1,24 @@
 <template>
   <div class="">
-    <div class="title text-5xl p-4 text-white">Písmena</div>
+    <div class="title text-5xl p-4 text-white select-none">Písmena</div>
     <div class="w-full flex flex-row flex-wrap p-2">
       <Card v-for="(letter, index) in lettersToShow" :key="index" class="basis-1/2 p-2"
         @click="selectItem(letter.pronounciation, letter.word)"
-        :primaryText="letter.name"
+        :primaryText="letter.visual"
         :secondaryText="letter.word"
         :picture="getImageUrl(removeDiacritics(letter.word))"
+        :showPicture=false
         >
         
       </Card>
     </div>
 
-    <div @click="selectLettersToShow()" class="bg-transblack border-1 rounded-lg p-2 m-4 text-xl text-white">
+    <div @click="selectLettersToShow()" class="bg-transblack border-1 rounded-lg p-2 m-4 text-xl text-white  cursor-pointer">
       Nová písmena
     </div>
 
     <div @click="$emit('showView', 'welcome')"
-      class="flex flex-row bg-transblack border-1 rounded-lg p-2 text-xl text-white m-4 absolute bottom-1">
+      class="flex flex-row bg-transblack border-1 rounded-lg p-2 text-xl text-white m-4 absolute bottom-1 cursor-pointer">
       <img src="../assets/back.png" alt="Zpět" class="p-1 h-8 mr-2">
       <p>Zpět</p>
     </div>
@@ -25,13 +26,10 @@
 </template>
   
 <script setup>
-import { ref } from 'vue'
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue'
 import Card from './Card.vue';
 
 const lettersToShow = ref(null)
-const isPictureShown = ref(false)
-const pictureSelected = ref("")
 
 let voice = null
 
@@ -54,7 +52,7 @@ function selectLettersToShow() {
   selectedLetters.forEach(element => {
     const randomWordIndex = Math.floor(Math.random() * element.words.length)
     const randomWord = [element.words[randomWordIndex]][0]
-    selectedLettersAndWords.push({ name: element.name, pronounciation: element.pronounciation, word: randomWord })
+    selectedLettersAndWords.push({ name: element.name, visual: element.visual, pronounciation: element.pronounciation, word: randomWord })
     console.log(randomWord)
   });
 
@@ -106,36 +104,41 @@ onMounted(() => {
 })
 
 const letters = [
-  { "name": "A", "pronounciation": "Aa", "words": ["auto", "autobus", "atmosféra", "anděl", "aplikace", "akvárium", "Amerika", "Austrálie", "Asie"] },
-  { "name": "B", "pronounciation": "Bé", "words": ["boty", "bicykl", "balkón", "brouk", "bomba", "březen", "bubliny", "brusle", "bobr", "babička"] },
-  { "name": "C", "pronounciation": "Cé", "words": ["cukr", "cena", "cirkus", "cuketa", "cibule", "cukrárna", "citrón"] },
-  { "name": "Č", "pronounciation": "Čé", "words": ["čáp", "čokoláda", "čepice", "čumák", "čára", "čaj", "čtyřka"] },
-  { "name": "D", "pronounciation": "Dé", "words": ["dům", "dort", "diamant", "dárek", "doktor", "dálnice", "dýně", "dlaždice", "dinosaurus", "dvojka", "devítka", "desítka", "děda"] },
-  { "name": "E", "pronounciation": "Ee", "words": ["elektrárna", "eskymák", "elektronika", "Evropa"] },
-  { "name": "F", "pronounciation": "Ef", "words": ["fotbal", "fialka", "farma", "fotografie", "flek", "Ferda", "flétna"] },
-  { "name": "G", "pronounciation": "Gé", "words": ["gól", "guma", "galerie", "gazela", "guláš", "gymnasta", "gumáky"] },
-  { "name": "H", "pronounciation": "Há", "words": ["hodiny", "housle", "hřeben", "hokej", "houska", "hříbě", "hlava"] },
-  { "name": "I", "pronounciation": "Měkké Ii", "words": ["internet", "inkoust", "iglú", "Itálie"] },
-  { "name": "J", "pronounciation": "Jé", "words": ["jablko", "jaro", "jazyk", "jednička", "jedlík", "jednorožec", "jed", "jelen"] },
-  { "name": "K", "pronounciation": "Ká", "words": ["kůň", "kolo", "kostel", "káva", "kamera", "kabát", "kabelka", "kaktus", "kalkulačka", "kamion", "kočka"] },
-  { "name": "L", "pronounciation": "El", "words": ["láska", "léto", "lednice", "loď", "letadlo", "lampa", "lístek", "loutka", "lak", "lžíce"] },
-  { "name": "M", "pronounciation": "Em", "words": ["město", "míč", "mobil", "mikrofon", "maminka", "měsíc", "mouka", "Mája", "meloun"] },
-  { "name": "N", "pronounciation": "En", "words": ["nůž", "nádraží", "nábytek", "nápad", "nápoj", "náramek", "nůžky", "noha"] },
-  { "name": "O", "pronounciation": "Óo", "words": ["okno", "obchod", "obraz", "obuv", "oběd", "obrazovka", "občerstvení", "opice", "okurka", "osmička"] },
-  { "name": "P", "pronounciation": "Pé", "words": ["pes", "příroda", "přání", "příběh", "přístav", "pětka", "police", "pavouk"] },
-  { "name": "Q", "pronounciation": "Qé", "words": ["qéčko"] },
-  { "name": "R", "pronounciation": "Er", "words": ["rádio", "rodina", "rýže", "rýma", "rýč", "růže", "ryba", "ráj", "raketa", "robot", "rak", "ruka"] },
-  { "name": "S", "pronounciation": "Es", "words": ["slunce", "stůl", "stín", "skříň", "stavba", "sůl", "slepice", "soumrak", "střecha", "srdce", "sedmička", "sova"] },
-  { "name": "Š", "pronounciation": "Eš", "words": ["škola", "šaty", "šipka", "štěně", "šátek", "švec", "šperk", "štít", "šťastný", "šestka"] },
-  { "name": "T", "pronounciation": "Té", "words": ["tráva", "traktor", "třešeň", "těsto", "tulipán", "trenér", "trpaslík", "třída", "trojka"] },
-  { "name": "U", "pronounciation": "Uú", "words": ["ulice", "ucho", "usměv", "uzel", "učitel", "úsměv", "ucho", "užovka"] },
-  { "name": "Ú", "pronounciation": "Dlouhé Uu", "words": ["úhel", "údolí", "účes", "úspěch", "ústa"] },
-  { "name": "V", "pronounciation": "Vé", "words": ["voda", "vítr", "vůně", "víno", "vůz", "včela", "výlet", "výhled", "vajíčko"] },
-  { "name": "W", "pronounciation": "Dvojité Vé", "words": ["WC", "western"] },
-  { "name": "X", "pronounciation": "Iks", "words": ["xylofón"] },
-  { "name": "Y", "pronounciation": "Tvrdé Ýy", "words": ["yzop", "ypsilón"] },
-  { "name": "Z", "pronounciation": "Zet", "words": ["zahrada", "zvíře", "zub", "zrcadlo", "zima", "zmrzlina", "zvonek", "zajíc", "zubr"] },
-  { "name": "Ž", "pronounciation": "Žet", "words": ["židle", "žena", "život", "žralok", "železo", "žirafa", "žonglér", "žihadlo", "žebřík"] },
+  { "name": "A", "pronounciation": "Aa", "visual":"A a", "words": ["auto", "autobus", "atmosféra", "anděl", "aplikace", "akvárium", "Amerika", "Austrálie", "Asie"] },
+  { "name": "B", "pronounciation": "Bé", "visual":"B b", "words": ["boty", "bicykl", "balkón", "brouk", "bomba", "březen", "bubliny", "brusle", "bobr", "babička"] },
+  { "name": "C", "pronounciation": "Cé", "visual":"C c", "words": ["cukr", "cena", "cirkus", "cuketa", "cibule", "cukrárna", "citrón"] },
+  { "name": "Č", "pronounciation": "Čé", "visual":"Č č", "words": ["čáp", "čokoláda", "čepice", "čumák", "čára", "čaj", "čtyřka"] },
+  { "name": "D", "pronounciation": "Dé", "visual":"D d", "words": ["dům", "dort", "diamant", "dárek", "doktor", "dálnice", "dýně", "dlaždice", "dinosaurus", "dvojka", "devítka", "desítka", "děda"] },
+  { "name": "E", "pronounciation": "Ee", "visual":"E e", "words": ["elektrárna", "eskymák", "elektronika", "Evropa"] },
+  { "name": "F", "pronounciation": "Ef", "visual":"F f", "words": ["fotbal", "fialka", "farma", "fotografie", "flek", "Ferda", "flétna"] },
+  { "name": "G", "pronounciation": "Gé", "visual":"G g", "words": ["gól", "guma", "galerie", "gazela", "guláš", "gymnasta", "gumáky"] },
+  { "name": "H", "pronounciation": "Há", "visual":"H h", "words": ["hodiny", "housle", "hřeben", "hokej", "houska", "hříbě", "hlava"] },
+  { "name": "I", "pronounciation": "Měkké Ii", "visual":"I i", "words": ["internet", "inkoust", "iglú", "Itálie"] },
+  { "name": "J", "pronounciation": "Jé", "visual":"J j", "words": ["jablko", "jaro", "jazyk", "jednička", "jedlík", "jednorožec", "jed", "jelen"] },
+  { "name": "K", "pronounciation": "Ká", "visual":"K k", "words": ["kůň", "kolo", "kostel", "káva", "kamera", "kabát", "kabelka", "kaktus", "kalkulačka", "kamion", "kočka"] },
+  { "name": "L", "pronounciation": "El", "visual":"L l", "words": ["láska", "léto", "lednice", "loď", "letadlo", "lampa", "lístek", "loutka", "lak", "lžíce"] },
+  { "name": "M", "pronounciation": "Em", "visual":"M m", "words": ["město", "míč", "mobil", "mikrofon", "maminka", "měsíc", "mouka", "Mája", "meloun"] },
+  { "name": "N", "pronounciation": "En", "visual":"N n", "words": ["nůž", "nádraží", "nábytek", "nápad", "nápoj", "náramek", "nůžky", "noha"] },
+  { "name": "O", "pronounciation": "Óo", "visual":"O o", "words": ["okno", "obchod", "obraz", "obuv", "oběd", "obrazovka", "občerstvení", "opice", "okurka", "osmička"] },
+  { "name": "P", "pronounciation": "Pé", "visual":"P p", "words": ["pes", "příroda", "přání", "příběh", "přístav", "pětka", "police", "pavouk"] },
+  { "name": "Q", "pronounciation": "Qé", "visual":"Q q", "words": ["qéčko"] },
+  { "name": "R", "pronounciation": "Er", "visual":"R r", "words": ["rádio", "rodina", "rýže", "rýma", "rýč", "růže", "ryba", "ráj", "raketa", "robot", "rak", "ruka"] },
+  { "name": "S", "pronounciation": "Es", "visual":"S s", "words": ["slunce", "stůl", "stín", "skříň", "stavba", "sůl", "slepice", "soumrak", "střecha", "srdce", "sedmička", "sova"] },
+  { "name": "Š", "pronounciation": "Eš", "visual":"Š š", "words": ["škola", "šaty", "šipka", "štěně", "šátek", "švec", "šperk", "štít", "šťastný", "šestka"] },
+  { "name": "T", "pronounciation": "Té", "visual":"T t", "words": ["tráva", "traktor", "třešeň", "těsto", "tulipán", "trenér", "trpaslík", "třída", "trojka"] },
+  { "name": "U", "pronounciation": "Uú", "visual":"U u", "words": ["ulice", "ucho", "usměv", "uzel", "učitel", "úsměv", "ucho", "užovka"] },
+  { "name": "Ú", "pronounciation": "Dlouhé Uu", "visual":"Ú ů", "words": ["úhel", "údolí", "účes", "úspěch", "ústa"] },
+  { "name": "V", "pronounciation": "Vé", "visual":"V v", "words": ["voda", "vítr", "vůně", "víno", "vůz", "včela", "výlet", "výhled", "vajíčko"] },
+  { "name": "W", "pronounciation": "Dvojité Vé", "visual":"W w", "words": ["WC", "western"] },
+  { "name": "X", "pronounciation": "Iks", "visual":"X x", "words": ["xylofón"] },
+  { "name": "Y", "pronounciation": "Tvrdé Ýy", "visual":"Y y", "words": ["yzop", "ypsilón"] },
+  { "name": "Z", "pronounciation": "Zet", "visual":"Z z", "words": ["zahrada", "zvíře", "zub", "zrcadlo", "zima", "zmrzlina", "zvonek", "zajíc", "zubr"] },
+  { "name": "Ž", "pronounciation": "Žet", "visual":"Ž ž", "words": ["židle", "žena", "život", "žralok", "železo", "žirafa", "žonglér", "žihadlo", "žebřík"] },
 ]
 
 </script>
+
+<style scoped>
+
+</style>
+```
