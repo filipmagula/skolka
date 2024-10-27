@@ -17,114 +17,16 @@
     </div>
 </template>
   
-<script>
-export default {
-    data() {
-        return {
-            numbers: [
-                { name: 'Jedna', number: '1' },
-                { name: 'Dvě', number: '2' },
-                { name: 'Tři', number: '3' },
-                { name: 'Čtyři', number: '4' },
-                { name: 'Pět', number: '5' },
-                { name: 'Šest', number: '6' },
-                { name: 'Sedm', number: '7' },
-                { name: 'Osm', number: '8' },
-                { name: 'Devět', number: '9' },
-                { name: 'Deset', number: '10' },
-                { name: 'Dvacet', number: '20' },
-                { name: 'Sto', number: '100' },
-            ],
-            greeting: 'Pojďme na čísla!',
+<script setup>
+import { ref, onMounted } from 'vue';
+import tts from '../tts'
+import { greetings, numbers } from '../assets/data.json'
 
-            voice: null,
-        };
-    },
-    created() {
-        this.setVoice();
-        this.speakGreetings();
-    },
-
-    methods: {
-
-        selectItem(color) {
-            this.speakColor(color.name); // Přidáme tuto řádku
-        },
-
-        setVoice() {
-            if ('speechSynthesis' in window) {
-                let synth = window.speechSynthesis;
-                const voices = synth.getVoices();
-                this.voice = voices.find(_voice => /cs[-_]CZ/.test(_voice.lang));
-                console.log(this.voice);
-            } else {
-                console.error('Web Speech API není podporováno v tomto prohlížeči.');
-            }
-        },
-
-        speakGreetings() {
-            if ('speechSynthesis' in window) {
-                const msg = new SpeechSynthesisUtterance(this.greeting);
-                msg.lang = 'cs_CZ';
-                msg.voice = this.voice;
-                window.speechSynthesis.speak(msg);
-            } else {
-                console.error('Web Speech API není podporováno v tomto prohlížeči.');
-            }
-        },
-
-        speakColor(colorName) {
-            if ('speechSynthesis' in window) {
-                const msg = new SpeechSynthesisUtterance(colorName);
-                msg.lang = 'cs_CZ';
-                msg.voice = this.voice;
-                window.speechSynthesis.speak(msg);
-            } else {
-                console.error('Web Speech API není podporováno v tomto prohlížeči.');
-            }
-        },
-    },
+const selectItem = (color) => {
+  tts.speak(color.name);
 };
+
+onMounted(() => {
+  tts.speak(greetings.numbers);
+});
 </script>
-  
-<style scoped>
-.color-box:hover {
-    animation: rotate 1s
-}
-
-@keyframes rotate {
-    from {
-        -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px);
-    }
-
-    to {
-        -webkit-transform: rotate(180deg) scale(4) skew(0deg) translate(0px);
-    }
-
-    to {
-        -webkit-transform: rotate(360deg) scale(1) skew(0deg) translate(0px);
-    }
-}
-
-@keyframes mymove {
-    0% {
-        top: 0px;
-    }
-
-    25% {
-        top: 200px;
-    }
-
-    50% {
-        top: 100px;
-    }
-
-    75% {
-        top: 200px;
-    }
-
-    100% {
-        top: 0px;
-    }
-}
-</style>

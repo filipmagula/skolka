@@ -5,7 +5,7 @@
       <div v-for="(shape, index) in shapes" :key="index" class="basis-1/3 p-2" @click="speakShape(shape.name)">
         <div class="flex flex-col h-28 border border-black rounded-lg justify-center bg-transblack">
           <div class="flex h-full items-center justify-center">
-            <img class="max-h-14 max-w-14 p-1" :src="getImageUrl(shape.file)" :alt="shape.name">
+            <img class="max-h-14 max-w-14 p-1" :src="getFileUrl('../assets/', shape.file)" :alt="shape.name">
           </div>
           <div class="bg-slate-700 opacity-75 text-white px-2 rounded-lg">{{ shape.name }}</div>
         </div>
@@ -21,48 +21,17 @@
 
 <script setup>
 import { onMounted } from 'vue';
-
-const getImageUrl = (fileName) => {
-  return new URL(`../assets/${fileName}`, import.meta.url).href
-}
-
-let voice = null
-
-function setVoice() {
-  if ('speechSynthesis' in window) {
-    let synth = window.speechSynthesis;
-    const voices = synth.getVoices();
-    voice = voices.find(_voice => /cs[-_]CZ/.test(_voice.lang));
-    console.log(voice);
-  } else {
-    console.error('Web Speech API není podporováno v tomto prohlížeči.');
-  }
-}
+import { greetings, shapes } from '../assets/data.json'
+import tts from '../tts'
+import { getFileUrl } from '../composables/getFileUrl';
 
 function speakShape(shape) {
-  if ('speechSynthesis' in window) {
-    const msg = new SpeechSynthesisUtterance(shape);
-    msg.lang = 'cs_CZ';
-    msg.voice = voice;
-    window.speechSynthesis.speak(msg);
-  } else {
-    console.error('Web Speech API není podporováno v tomto prohlížeči.');
-  }
+  tts.speak(shape)
 }
 
 onMounted(() => {
-  setVoice();
+  tts.speak(greetings.shapes)
 })
 
-const shapes = [
-  { "name": "čtverec", "file": "square.png" },
-  { "name": "kruh", "file": "circle.png" },
-  { "name": "obdelník", "file": "rectangle.png" },
-  { "name": "trojúhelník", "file": "triangle.png" },
-  { "name": "ovál", "file": "oval.png" },
-  { "name": "lichoběžník", "file": "trapezoid.png" },
-  { "name": "rovnoběžník", "file": "parallelogram.png" },
-  { "name": "hvězda", "file": "star.png" },
-  { "name": "spirála", "file": "spiral.png" },
-]
+
 </script>

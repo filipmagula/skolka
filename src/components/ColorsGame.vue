@@ -19,24 +19,10 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import tts from '../tts';
-
-const colors = ref([
-  { name: 'Červená', hex: '#ff5661' },
-  { name: 'Modrá', hex: '#83b3fb' },
-  { name: 'Zelená', hex: '#8bf18b' },
-  { name: 'Žlutá', hex: '#ffea81' },
-  { name: 'Bílá', hex: '#FFFFFF' },
-  { name: 'Černá', hex: '#000000' },
-  { name: 'Hnědá', hex: '#a73312' },
-  { name: 'Oranžová', hex: '#fc874d' },
-  { name: 'Růžová', hex: '#fb83be' },
-  { name: 'Fialová', hex: '#c35df3' },
-  { name: 'Šedá', hex: '#808080' },
-  // Přidejte další barvy podle potřeby
-]);
+import { greetings, colors } from '../assets/data.json'
 
 const greeting = ref('Pojďme na barvy!');
 const selectedColor = ref(null);
@@ -47,7 +33,7 @@ const spin = (index) => {
   spinningIndex.value = index;
   setTimeout(() => {
     spinningIndex.value = null;
-  }, 1000);
+  }, 500);
 }
 
 const speak = (text) => {
@@ -64,22 +50,10 @@ const selectColor = (color) => {
 };
 
 onMounted(() => {
-  speak(greeting.value);
+  speak(greetings.colors);
 });
 </script>
 
 <style scoped>
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
 
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 1s linear;
-}
 </style>

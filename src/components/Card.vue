@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref, onMounted, onActivated, watch } from 'vue'
+import { defineProps, ref, watch } from 'vue'
 
 const props = defineProps({
     primaryText: {
@@ -26,7 +26,7 @@ const props = defineProps({
         required: true
     },
     picture: {
-        type: URL,
+        type: String,
         required: false
     },
     showPicture: {
@@ -35,12 +35,6 @@ const props = defineProps({
     }
 
 })
-
-watch(props.showPicture, (newX) => {
-  console.log(`x is ${newX}`)
-})
-
-
 
 const isPictureShown = ref(false)
 

@@ -5,7 +5,7 @@
       <div v-for="game in games" class="basis-1/2 p-2 cursor-pointer" @click="$emit('showView', game.view)">
         <div class="flex flex-col h-36 border border-black rounded-lg justify-center bg-transblack">
           <div class="flex text-4xl h-full items-center justify-center text-white">
-            <img :src="getImageUrl(game.icon)" :alt="game.name" class="h-14">
+            <img :src="getFileUrl('../assets/', game.icon)" :alt="game.name" class="h-14">
           </div>
           <div class="bg-slate-700 opacity-75 text-white px-2 rounded-lg"> {{ game.name }} </div>
         </div>
@@ -21,52 +21,21 @@
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue';
-const greeting = ref('Ahoj, pojďme si hrát!');
-let voice = null;
+<script setup lang="ts">
+import { onMounted } from 'vue';
+import tts from '../tts';
+import { greetings, games } from "../assets/data.json"
+import { getFileUrl } from '../composables/getFileUrl';
 
 onMounted(() => {
-  setVoice();
-  speak(greeting.value);
+  speak(greetings.welcome1 + " " + greetings.welcome2);
 });
 
-function setVoice() {
+const speak = (text) => {
   if ('speechSynthesis' in window) {
-    let synth = window.speechSynthesis;
-    const voices = synth.getVoices();
-    voice = voices.find(_voice => /cs[-_]CZ/.test(_voice.lang));
-    console.log(voice);
+    tts.speak(text);
   } else {
     console.error('Web Speech API není podporováno v tomto prohlížeči.');
   }
-}
-
-function speak(speech) {
-  if ('speechSynthesis' in window) {
-    const msg = new SpeechSynthesisUtterance(speech);
-    msg.lang = 'cs_CZ';
-    msg.voice = voice;
-    window.speechSynthesis.speak(msg);
-  } else {
-    console.error('Web Speech API není podporováno v tomto prohlížeči.');
-  }
-}
-
-const getImageUrl = (fileName) => {
-  return new URL(fileName, import.meta.url).href
-}
-
-const games =
-  [
-    { "view": "colors", "name": "Barvy", "icon": "../assets/iconColors.png" },
-    { "view": "numbers", "name": "Čísla", "icon": "../assets/iconNumbers.png" },
-    { "view": "letters", "name": "Písmena", "icon": "../assets/iconLetters.png" },
-    { "view": "shapes", "name": "Tvary", "icon": "../assets/iconShapes.png" },
-    { "view": "counting", "name": "Počítání", "icon": "../assets/iconCounting.png" },
-    { "view": "syllables", "name": "Slabiky", "icon": "../assets/iconLetters.png" }
-  ]
-
+};
 </script>
-  
-<style scoped></style>

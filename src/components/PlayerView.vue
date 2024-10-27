@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref } from "vue";
 
 const playerName = ref("");
 

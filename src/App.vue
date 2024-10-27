@@ -12,15 +12,6 @@ import { ref } from 'vue'
 
 const selectedScreen = ref('welcome')
 
-function showNumbers() {
-  console.log('showNumbers')
-  selectedScreen.value = 'numbers'
-}
-
-function showColors() {
-  selectedScreen.value = 'colors'
-}
-
 function showView(name) {
   selectedScreen.value = name
 }

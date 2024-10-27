@@ -1,7 +1,7 @@
 // src/tts.ts
 class TextToSpeech {
   private static instance: TextToSpeech;
-  private synth: SpeechSynthesis;
+  readonly synth: SpeechSynthesis;
   private voices: SpeechSynthesisVoice[] = [];
 
   private constructor() {

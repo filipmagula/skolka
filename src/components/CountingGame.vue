@@ -20,11 +20,10 @@
     </div>
   </div>
 </template>
-  
 
-  
 <script setup>
 import { ref, computed, onMounted } from "vue";
+import tts from '../tts'
 
 // Generuje náhodné číslo v daném rozsahu
 const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -100,32 +99,11 @@ const getClass = (option) => {
   }
 };
 
-let voice = null
-
-function setVoice() {
-  if ('speechSynthesis' in window) {
-    let synth = window.speechSynthesis;
-    const voices = synth.getVoices();
-    voice = voices.find(_voice => /cs[-_]CZ/.test(_voice.lang));
-    console.log(voice);
-  } else {
-    console.error('Web Speech API není podporováno v tomto prohlížeči.');
-  }
-}
-
 function speak(speech) {
-  if ('speechSynthesis' in window) {
-    const msg = new SpeechSynthesisUtterance(speech);
-    msg.lang = 'cs_CZ';
-    msg.voice = voice;
-    window.speechSynthesis.speak(msg);
-  } else {
-    console.error('Web Speech API není podporováno v tomto prohlížeči.');
-  }
+  tts.speak(speech)
 }
 
 onMounted(() => {
-  setVoice();
   speak("Kolik je " + question.value.slice(0, -3) + "?");
 })
 </script>
