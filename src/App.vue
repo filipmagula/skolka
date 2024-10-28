@@ -10,8 +10,6 @@ import SyllabsGame from "./components/SyllabsGame.vue"
 
 import { ref } from "vue"
 
-import.meta.glob("../assets/general/*")
-
 const selectedScreen = ref("welcome")
 
 function showView(name) {
@@ -36,7 +34,7 @@ function showView(name) {
 .main {
   max-width: 450px;
   height: 100%;
-  background-image: url("./assets/general/background.png");
+  background-image: url("/public/general/background.png");
   background-size: cover;
 }
 </style>
