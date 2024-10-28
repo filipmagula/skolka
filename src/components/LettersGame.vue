@@ -9,7 +9,7 @@
         @click="selectItem(letter.pronunciation, letter.word)"
         :primaryText="letter.visual"
         :secondaryText="letter.word"
-        :picture="getFileUrl('../assets/letters/', removeDiacritics(letter.word) + '.jpg')"
+        :picture="getFileUrl('/letters/', removeDiacritics(letter.word) + '.jpg')"
         :showPicture="false"
       >
       </Card>
@@ -18,7 +18,7 @@
     <div @click="selectLettersToShow()" class="bg-transblack border-1 rounded-lg p-2 m-4 text-xl text-white cursor-pointer">Nová písmena</div>
 
     <div @click="$emit('showView', 'welcome')" class="flex flex-row bg-transblack border-1 rounded-lg p-2 text-xl text-white m-4 absolute bottom-1 cursor-pointer">
-      <img src="../assets/general/back.png" alt="" class="p-1 h-8 mr-2" />
+      <img src="/general/back.png" alt="" class="p-1 h-8 mr-2" />
       <p>Zpět</p>
     </div>
   </div>

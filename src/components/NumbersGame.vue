@@ -10,7 +10,7 @@
       </div>
     </div>
     <div @click="$emit('showView', 'welcome')" class="flex flex-row bg-transblack border-1 rounded-lg p-2 text-xl text-white m-4 absolute bottom-1">
-      <img src="../assets/general/back.png" alt="" class="p-1 h-8 mr-2" />
+      <img src="/general/back.png" alt="" class="p-1 h-8 mr-2" />
       <p>Zpět</p>
     </div>
   </div>
