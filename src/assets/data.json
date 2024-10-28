@@ -1,107 +1,680 @@
 {
   "greetings": {
-    "welcome1" : "Ahoj",
-    "welcome2" : "pojďme si hrát.",
-    "colors" : "Teď si procvičíme barvy.",
-    "numbers" : "Čísla jsou hračka.",
-    "letters" : "Pojďme na písmena.",
-    "shapes" : "Umíš poznávat tvary?",
-    "counting" : "Počítání je hračka.",
-    "syllables" : "Je čas na slabiky."
+    "welcome1": "Ahoj",
+    "welcome2": "pojďme si hrát.",
+    "colors": "Teď si procvičíme barvy.",
+    "numbers": "Čísla jsou hračka.",
+    "letters": "Pojďme na písmena.",
+    "shapes": "Umíš poznávat tvary?",
+    "counting": "Počítání je hračka.",
+    "syllables": "Je čas na slabiky."
   },
-  "games" : [
-    { "view": "colors", "name": "Barvy", "icon": "../assets/iconColors.png" },
-    { "view": "numbers", "name": "Čísla", "icon": "../assets/iconNumbers.png" },
-    { "view": "letters", "name": "Písmena", "icon": "../assets/iconLetters.png" },
-    { "view": "shapes", "name": "Tvary", "icon": "../assets/iconShapes.png" },
-    { "view": "counting", "name": "Počítání", "icon": "../assets/iconCounting.png" },
-    { "view": "syllables", "name": "Slabiky", "icon": "../assets/iconSyllables.png" }
+  "games": [
+    {
+      "view": "colors",
+      "name": "Barvy",
+      "icon": "iconColors.png"
+    },
+    {
+      "view": "numbers",
+      "name": "Čísla",
+      "icon": "iconNumbers.png"
+    },
+    {
+      "view": "letters",
+      "name": "Písmena",
+      "icon": "iconLetters.png"
+    },
+    {
+      "view": "shapes",
+      "name": "Tvary",
+      "icon": "iconShapes.png"
+    },
+    {
+      "view": "counting",
+      "name": "Počítání",
+      "icon": "iconCounting.png"
+    },
+    {
+      "view": "syllables",
+      "name": "Slabiky",
+      "icon": "iconSyllables.png"
+    }
   ],
   "colors": [
-    { "name": "Červená", "hex": "#ff5661" },
-    { "name": "Modrá", "hex": "#83b3fb" },
-    { "name": "Zelená", "hex": "#8bf18b" },
-    { "name": "Žlutá", "hex": "#ffea81" },
-    { "name": "Bílá", "hex": "#FFFFFF" },
-    { "name": "Černá", "hex": "#000000" },
-    { "name": "Hnědá", "hex": "#a73312" },
-    { "name": "Oranžová", "hex": "#fc874d" },
-    { "name": "Růžová", "hex": "#fb83be" },
-    { "name": "Fialová", "hex": "#c35df3" },
-    { "name": "Šedá", "hex": "#808080" }
+    {
+      "name": "Červená",
+      "hex": "#ff5661"
+    },
+    {
+      "name": "Modrá",
+      "hex": "#83b3fb"
+    },
+    {
+      "name": "Zelená",
+      "hex": "#8bf18b"
+    },
+    {
+      "name": "Žlutá",
+      "hex": "#ffea81"
+    },
+    {
+      "name": "Bílá",
+      "hex": "#FFFFFF"
+    },
+    {
+      "name": "Černá",
+      "hex": "#000000"
+    },
+    {
+      "name": "Hnědá",
+      "hex": "#a73312"
+    },
+    {
+      "name": "Oranžová",
+      "hex": "#fc874d"
+    },
+    {
+      "name": "Růžová",
+      "hex": "#fb83be"
+    },
+    {
+      "name": "Fialová",
+      "hex": "#c35df3"
+    },
+    {
+      "name": "Šedá",
+      "hex": "#808080"
+    }
   ],
   "letters": [
-    { "name": "A", "pronounciation": "Aa", "visual": "A a", "words": ["auto", "autobus", "atmosféra", "anděl", "aplikace", "akvárium", "Amerika", "Austrálie", "Asie"] },
-    { "name": "B", "pronounciation": "Bé", "visual": "B b", "words": ["boty", "bicykl", "balkón", "brouk", "bomba", "březen", "bubliny", "brusle", "bobr", "babička"] },
-    { "name": "C", "pronounciation": "Cé", "visual": "C c", "words": ["cukr", "cena", "cirkus", "cuketa", "cibule", "cukrárna", "citrón"] },
-    { "name": "Č", "pronounciation": "Čé", "visual": "Č č", "words": ["čáp", "čokoláda", "čepice", "čumák", "čára", "čaj", "čtyřka"] },
-    { "name": "D", "pronounciation": "Dé", "visual": "D d", "words": ["dům", "dort", "diamant", "dárek", "doktor", "dálnice", "dýně", "dlaždice", "dinosaurus", "dvojka", "devítka", "desítka", "děda"] },
-    { "name": "E", "pronounciation": "Ee", "visual": "E e", "words": ["elektrárna", "eskymák", "elektronika", "Evropa"] },
-    { "name": "F", "pronounciation": "Ef", "visual": "F f", "words": ["fotbal", "fialka", "farma", "fotografie", "flek", "Ferda", "flétna"] },
-    { "name": "G", "pronounciation": "Gé", "visual": "G g", "words": ["gól", "guma", "galerie", "gazela", "guláš", "gymnasta", "gumáky"] },
-    { "name": "H", "pronounciation": "Há", "visual": "H h", "words": ["hodiny", "housle", "hřeben", "hokej", "houska", "hříbě", "hlava"] },
-    { "name": "I", "pronounciation": "Měkké Ii", "visual": "I i", "words": ["internet", "inkoust", "iglú", "Itálie"] },
-    { "name": "J", "pronounciation": "Jé", "visual": "J j", "words": ["jablko", "jaro", "jazyk", "jednička", "jedlík", "jednorožec", "jed", "jelen"] },
-    { "name": "K", "pronounciation": "Ká", "visual": "K k", "words": ["kůň", "kolo", "kostel", "káva", "kamera", "kabát", "kabelka", "kaktus", "kalkulačka", "kamion", "kočka"] },
-    { "name": "L", "pronounciation": "El", "visual": "L l", "words": ["láska", "léto", "lednice", "loď", "letadlo", "lampa", "lístek", "loutka", "lak", "lžíce"] },
-    { "name": "M", "pronounciation": "Em", "visual": "M m", "words": ["město", "míč", "mobil", "mikrofon", "maminka", "měsíc", "mouka", "Mája", "meloun"] },
-    { "name": "N", "pronounciation": "En", "visual": "N n", "words": ["nůž", "nádraží", "nábytek", "nápad", "nápoj", "náramek", "nůžky", "noha"] },
-    { "name": "O", "pronounciation": "Óo", "visual": "O o", "words": ["okno", "obchod", "obraz", "obuv", "oběd", "obrazovka", "občerstvení", "opice", "okurka", "osmička"] },
-    { "name": "P", "pronounciation": "Pé", "visual": "P p", "words": ["pes", "příroda", "přání", "příběh", "přístav", "pětka", "police", "pavouk"] },
-    { "name": "Q", "pronounciation": "Qé", "visual": "Q q", "words": ["qéčko"] },
-    { "name": "R", "pronounciation": "Er", "visual": "R r", "words": ["rádio", "rodina", "rýže", "rýma", "rýč", "růže", "ryba", "ráj", "raketa", "robot", "rak", "ruka"] },
-    { "name": "S", "pronounciation": "Es", "visual": "S s", "words": ["slunce", "stůl", "stín", "skříň", "stavba", "sůl", "slepice", "soumrak", "střecha", "srdce", "sedmička", "sova"] },
-    { "name": "Š", "pronounciation": "Eš", "visual": "Š š", "words": ["škola", "šaty", "šipka", "štěně", "šátek", "švec", "šperk", "štít", "šťastný", "šestka"] },
-    { "name": "T", "pronounciation": "Té", "visual": "T t", "words": ["tráva", "traktor", "třešeň", "těsto", "tulipán", "trenér", "trpaslík", "třída", "trojka"] },
-    { "name": "U", "pronounciation": "Uú", "visual": "U u", "words": ["ulice", "ucho", "usměv", "uzel", "učitel", "úsměv", "ucho", "užovka"] },
-    { "name": "Ú", "pronounciation": "Dlouhé Ú", "visual": "Ú ů", "words": ["úhel", "údolí", "účes", "úspěch", "ústa"] },
-    { "name": "V", "pronounciation": "Vé", "visual": "V v", "words": ["voda", "vítr", "vůně", "víno", "vůz", "včela", "výlet", "výhled", "vajíčko"] },
-    { "name": "W", "pronounciation": "Dvojité Vé", "visual": "W w", "words": ["WC", "western"] },
-    { "name": "X", "pronounciation": "Iks", "visual": "X x", "words": ["xylofón"] },
-    { "name": "Y", "pronounciation": "Tvrdé Ýy", "visual": "Y y", "words": ["yzop", "ypsilón"] },
-    { "name": "Z", "pronounciation": "Zet", "visual": "Z z", "words": ["zahrada", "zvíře", "zub", "zrcadlo", "zima", "zmrzlina", "zvonek", "zajíc", "zubr"] },
-    { "name": "Ž", "pronounciation": "Žet", "visual": "Ž ž", "words": ["židle", "žena", "život", "žralok", "železo", "žirafa", "žonglér", "žihadlo", "žebřík"] }
+    {
+      "name": "A",
+      "pronunciation": "Aa",
+      "visual": "A a",
+      "words": [
+        "auto",
+        "autobus",
+        "atmosféra",
+        "anděl",
+        "aplikace",
+        "akvárium",
+        "Amerika",
+        "Austrálie",
+        "Asie"
+      ]
+    },
+    {
+      "name": "B",
+      "pronunciation": "Bé",
+      "visual": "B b",
+      "words": [
+        "boty",
+        "bicykl",
+        "balkón",
+        "brouk",
+        "bomba",
+        "březen",
+        "bubliny",
+        "brusle",
+        "bobr",
+        "babička"
+      ]
+    },
+    {
+      "name": "C",
+      "pronunciation": "Cé",
+      "visual": "C c",
+      "words": [
+        "cukr",
+        "cena",
+        "cirkus",
+        "cuketa",
+        "cibule",
+        "cukrárna",
+        "citrón"
+      ]
+    },
+    {
+      "name": "Č",
+      "pronunciation": "Čé",
+      "visual": "Č č",
+      "words": [
+        "čáp",
+        "čokoláda",
+        "čepice",
+        "čumák",
+        "čára",
+        "čaj",
+        "čtyřka"
+      ]
+    },
+    {
+      "name": "D",
+      "pronunciation": "Dé",
+      "visual": "D d",
+      "words": [
+        "dům",
+        "dort",
+        "diamant",
+        "dárek",
+        "doktor",
+        "dálnice",
+        "dýně",
+        "dlaždice",
+        "dinosaurus",
+        "dvojka",
+        "devítka",
+        "desítka",
+        "děda"
+      ]
+    },
+    {
+      "name": "E",
+      "pronunciation": "Ee",
+      "visual": "E e",
+      "words": [
+        "elektrárna",
+        "eskymák",
+        "elektronika",
+        "Evropa"
+      ]
+    },
+    {
+      "name": "F",
+      "pronunciation": "Ef",
+      "visual": "F f",
+      "words": [
+        "fotbal",
+        "fialka",
+        "farma",
+        "fotografie",
+        "flek",
+        "Ferda",
+        "flétna"
+      ]
+    },
+    {
+      "name": "G",
+      "pronunciation": "Gé",
+      "visual": "G g",
+      "words": [
+        "gól",
+        "guma",
+        "galerie",
+        "gazela",
+        "guláš",
+        "gymnasta",
+        "gumáky"
+      ]
+    },
+    {
+      "name": "H",
+      "pronunciation": "Há",
+      "visual": "H h",
+      "words": [
+        "hodiny",
+        "housle",
+        "hřeben",
+        "hokej",
+        "houska",
+        "hříbě",
+        "hlava"
+      ]
+    },
+    {
+      "name": "I",
+      "pronunciation": "Měkké Ii",
+      "visual": "I i",
+      "words": [
+        "internet",
+        "inkoust",
+        "iglú",
+        "Itálie"
+      ]
+    },
+    {
+      "name": "J",
+      "pronunciation": "Jé",
+      "visual": "J j",
+      "words": [
+        "jablko",
+        "jaro",
+        "jazyk",
+        "jednička",
+        "jedlík",
+        "jednorožec",
+        "jed",
+        "jelen"
+      ]
+    },
+    {
+      "name": "K",
+      "pronunciation": "Ká",
+      "visual": "K k",
+      "words": [
+        "kůň",
+        "kolo",
+        "kostel",
+        "káva",
+        "kamera",
+        "kabát",
+        "kabelka",
+        "kaktus",
+        "kalkulačka",
+        "kamion",
+        "kočka"
+      ]
+    },
+    {
+      "name": "L",
+      "pronunciation": "El",
+      "visual": "L l",
+      "words": [
+        "láska",
+        "léto",
+        "lednice",
+        "loď",
+        "letadlo",
+        "lampa",
+        "lístek",
+        "loutka",
+        "lak",
+        "lžíce"
+      ]
+    },
+    {
+      "name": "M",
+      "pronunciation": "Em",
+      "visual": "M m",
+      "words": [
+        "město",
+        "míč",
+        "mobil",
+        "mikrofon",
+        "maminka",
+        "měsíc",
+        "mouka",
+        "Mája",
+        "meloun"
+      ]
+    },
+    {
+      "name": "N",
+      "pronunciation": "En",
+      "visual": "N n",
+      "words": [
+        "nůž",
+        "nádraží",
+        "nábytek",
+        "nápad",
+        "nápoj",
+        "náramek",
+        "nůžky",
+        "noha"
+      ]
+    },
+    {
+      "name": "O",
+      "pronunciation": "Óo",
+      "visual": "O o",
+      "words": [
+        "okno",
+        "obchod",
+        "obraz",
+        "obuv",
+        "oběd",
+        "obrazovka",
+        "občerstvení",
+        "opice",
+        "okurka",
+        "osmička"
+      ]
+    },
+    {
+      "name": "P",
+      "pronunciation": "Pé",
+      "visual": "P p",
+      "words": [
+        "pes",
+        "příroda",
+        "přání",
+        "příběh",
+        "přístav",
+        "pětka",
+        "police",
+        "pavouk"
+      ]
+    },
+    {
+      "name": "Q",
+      "pronunciation": "Qé",
+      "visual": "Q q",
+      "words": [
+        "qéčko"
+      ]
+    },
+    {
+      "name": "R",
+      "pronunciation": "Er",
+      "visual": "R r",
+      "words": [
+        "rádio",
+        "rodina",
+        "rýže",
+        "rýma",
+        "rýč",
+        "růže",
+        "ryba",
+        "ráj",
+        "raketa",
+        "robot",
+        "rak",
+        "ruka"
+      ]
+    },
+    {
+      "name": "S",
+      "pronunciation": "Es",
+      "visual": "S s",
+      "words": [
+        "slunce",
+        "stůl",
+        "stín",
+        "skříň",
+        "stavba",
+        "sůl",
+        "slepice",
+        "soumrak",
+        "střecha",
+        "srdce",
+        "sedmička",
+        "sova"
+      ]
+    },
+    {
+      "name": "Š",
+      "pronunciation": "Eš",
+      "visual": "Š š",
+      "words": [
+        "škola",
+        "šaty",
+        "šipka",
+        "štěně",
+        "šátek",
+        "švec",
+        "šperk",
+        "štít",
+        "šťastný",
+        "šestka"
+      ]
+    },
+    {
+      "name": "T",
+      "pronunciation": "Té",
+      "visual": "T t",
+      "words": [
+        "tráva",
+        "traktor",
+        "třešeň",
+        "těsto",
+        "tulipán",
+        "trenér",
+        "trpaslík",
+        "třída",
+        "trojka"
+      ]
+    },
+    {
+      "name": "U",
+      "pronunciation": "Uú",
+      "visual": "U u",
+      "words": [
+        "ulice",
+        "ucho",
+        "usměv",
+        "uzel",
+        "učitel",
+        "úsměv",
+        "ucho",
+        "užovka"
+      ]
+    },
+    {
+      "name": "Ú",
+      "pronunciation": "Dlouhé Ú",
+      "visual": "Ú ů",
+      "words": [
+        "úhel",
+        "údolí",
+        "účes",
+        "úspěch",
+        "ústa"
+      ]
+    },
+    {
+      "name": "V",
+      "pronunciation": "Vé",
+      "visual": "V v",
+      "words": [
+        "voda",
+        "vítr",
+        "vůně",
+        "víno",
+        "vůz",
+        "včela",
+        "výlet",
+        "výhled",
+        "vajíčko"
+      ]
+    },
+    {
+      "name": "W",
+      "pronunciation": "Dvojité Vé",
+      "visual": "W w",
+      "words": [
+        "WC",
+        "western"
+      ]
+    },
+    {
+      "name": "X",
+      "pronunciation": "Iks",
+      "visual": "X x",
+      "words": [
+        "xylofón"
+      ]
+    },
+    {
+      "name": "Y",
+      "pronunciation": "Tvrdé Ýy",
+      "visual": "Y y",
+      "words": [
+        "yzop",
+        "ypsilón"
+      ]
+    },
+    {
+      "name": "Z",
+      "pronunciation": "Zet",
+      "visual": "Z z",
+      "words": [
+        "zahrada",
+        "zvíře",
+        "zub",
+        "zrcadlo",
+        "zima",
+        "zmrzlina",
+        "zvonek",
+        "zajíc",
+        "zubr"
+      ]
+    },
+    {
+      "name": "Ž",
+      "pronunciation": "Žet",
+      "visual": "Ž ž",
+      "words": [
+        "židle",
+        "žena",
+        "život",
+        "žralok",
+        "železo",
+        "žirafa",
+        "žonglér",
+        "žihadlo",
+        "žebřík"
+      ]
+    }
   ],
   "numbers": [
-    { "name": "Jedna", "number": "1" },
-    { "name": "Dvě", "number": "2" },
-    { "name": "Tři", "number": "3" },
-    { "name": "Čtyři", "number": "4" },
-    { "name": "Pět", "number": "5" },
-    { "name": "Šest", "number": "6" },
-    { "name": "Sedm", "number": "7" },
-    { "name": "Osm", "number": "8" },
-    { "name": "Devět", "number": "9" },
-    { "name": "Deset", "number": "10" },
-    { "name": "Dvacet", "number": "20" },
-    { "name": "Sto", "number": "100" }
+    {
+      "name": "Jedna",
+      "number": "1"
+    },
+    {
+      "name": "Dvě",
+      "number": "2"
+    },
+    {
+      "name": "Tři",
+      "number": "3"
+    },
+    {
+      "name": "Čtyři",
+      "number": "4"
+    },
+    {
+      "name": "Pět",
+      "number": "5"
+    },
+    {
+      "name": "Šest",
+      "number": "6"
+    },
+    {
+      "name": "Sedm",
+      "number": "7"
+    },
+    {
+      "name": "Osm",
+      "number": "8"
+    },
+    {
+      "name": "Devět",
+      "number": "9"
+    },
+    {
+      "name": "Deset",
+      "number": "10"
+    },
+    {
+      "name": "Dvacet",
+      "number": "20"
+    },
+    {
+      "name": "Sto",
+      "number": "100"
+    }
   ],
-  "syllables" : [
-    { "name": "MA", "pronounciation": "Ma" },
-    { "name": "MI", "pronounciation": "Mi" },
-    { "name": "TA", "pronounciation": "Ta" },
-    { "name": "LA", "pronounciation": "La" },
-    { "name": "LO", "pronounciation": "Lo" },
-    { "name": "ME", "pronounciation": "Me" },
-    { "name": "LE", "pronounciation": "Le" },
-    { "name": "JA", "pronounciation": "Ja" },
-    { "name": "JE", "pronounciation": "Je" },
-    { "name": "KE", "pronounciation": "Ke" },
-    { "name": "KO", "pronounciation": "Ko" },
-    { "name": "SI", "pronounciation": "Si" },
-    { "name": "SE", "pronounciation": "Se" },
-    { "name": "LE", "pronounciation": "Le" },
-    { "name": "FE", "pronounciation": "Fe" }
+  "syllables": [
+    {
+      "name": "MA",
+      "pronunciation": "Ma"
+    },
+    {
+      "name": "MI",
+      "pronunciation": "Mi"
+    },
+    {
+      "name": "TA",
+      "pronunciation": "Ta"
+    },
+    {
+      "name": "LA",
+      "pronunciation": "La"
+    },
+    {
+      "name": "LO",
+      "pronunciation": "Lo"
+    },
+    {
+      "name": "ME",
+      "pronunciation": "Me"
+    },
+    {
+      "name": "LE",
+      "pronunciation": "Le"
+    },
+    {
+      "name": "JA",
+      "pronunciation": "Ja"
+    },
+    {
+      "name": "JE",
+      "pronunciation": "Je"
+    },
+    {
+      "name": "KE",
+      "pronunciation": "Ke"
+    },
+    {
+      "name": "KO",
+      "pronunciation": "Ko"
+    },
+    {
+      "name": "SI",
+      "pronunciation": "Si"
+    },
+    {
+      "name": "SE",
+      "pronunciation": "Se"
+    },
+    {
+      "name": "LE",
+      "pronunciation": "Le"
+    },
+    {
+      "name": "FE",
+      "pronunciation": "Fe"
+    }
   ],
-  "shapes" : [
-    { "name": "čtverec", "file": "square.png" },
-    { "name": "kruh", "file": "circle.png" },
-    { "name": "obdelník", "file": "rectangle.png" },
-    { "name": "trojúhelník", "file": "triangle.png" },
-    { "name": "ovál", "file": "oval.png" },
-    { "name": "lichoběžník", "file": "trapezoid.png" },
-    { "name": "rovnoběžník", "file": "parallelogram.png" },
-    { "name": "hvězda", "file": "star.png" },
-    { "name": "spirála", "file": "spiral.png" }
+  "shapes": [
+    {
+      "name": "čtverec",
+      "file": "square.png"
+    },
+    {
+      "name": "kruh",
+      "file": "circle.png"
+    },
+    {
+      "name": "obdelník",
+      "file": "rectangle.png"
+    },
+    {
+      "name": "trojúhelník",
+      "file": "triangle.png"
+    },
+    {
+      "name": "ovál",
+      "file": "oval.png"
+    },
+    {
+      "name": "lichoběžník",
+      "file": "trapezoid.png"
+    },
+    {
+      "name": "rovnoběžník",
+      "file": "parallelogram.png"
+    },
+    {
+      "name": "hvězda",
+      "file": "star.png"
+    },
+    {
+      "name": "spirála",
+      "file": "spiral.png"
+    }
   ]
 }
